@@ -52,6 +52,7 @@ class Transaction(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.SET_NULL, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     # Add other transaction-related fields
+    # Add other transaction-related fields
 
     def __str__(self):
         return f"{self.transaction_type}: {self.amount} on {self.debit_card}"
