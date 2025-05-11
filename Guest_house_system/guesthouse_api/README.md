@@ -24,5 +24,8 @@ python manage.py runserver 0.0.0.0:8000
 
 ## Push
 ```bash
-git status
+git status # view changes
+git add . # Add files to be commited
+git commit -m "Any message of a change u did"
+git push origin main
 ```
