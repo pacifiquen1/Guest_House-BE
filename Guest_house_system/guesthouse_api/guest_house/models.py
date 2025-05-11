@@ -20,14 +20,17 @@ class Meal(models.Model):
 class Guest(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
+
     # Add other guest-related fields
 
     def __str__(self):
         return self.name
 
 class DebitCard(models.Model):
+    # guest = models.OneToOneField(Guest, on_delete=models.CASCADE, related_name="card", null=True, blank=True)
     card_number = models.CharField(max_length=20, unique=True)
     balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    cvc = models.CharField(max_length=3, null=True, blank=True)
     # Add other debit card-related fields
 
     def __str__(self):
