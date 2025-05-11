@@ -21,6 +21,11 @@ class DebitCardSerializer(serializers.ModelSerializer):
         model = DebitCard
         fields = '__all__'
 
+    def to_representation(self, instance):
+        serialized_data = super(DebitCardSerializer, self).to_representation(instance)
+        # serialized_data["has_guest"] = True if instance.guest else False
+        return serialized_data
+
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction

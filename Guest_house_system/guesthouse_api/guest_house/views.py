@@ -37,6 +37,7 @@ class ReservationViewSet(viewsets.ModelViewSet):
 
         guest, _ = Guest.objects.get_or_create(email=data['guest_email'], defaults={'name': data['guest_name']})
 
+
         reservation = Reservation(guest=guest)
         total_cost = 0
 
